@@ -1,0 +1,99 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>teacher_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="6.0.6" />
+    <PackageReference Include="OpenIddict" Version="3.1.1" />
+    <PackageReference Include="OpenIddict.Validation" Version="3.1.1" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="OpenIddict.Core" Version="3.1.1" />
+    <PackageReference Include="OpenIddict.Validation.AspNetCore" Version="3.1.1" />
+    <PackageReference Include="OpenIddict.AspNetCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MySqlConnector" Version="2.1.10" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.6" />
+    <PackageReference Include="AspNet.Security.OpenIdConnect.Primitives" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Application\" />
+    <None Remove="Domain\" />
+    <None Remove="Infrastructure\" />
+    <None Remove="Infrastructure\Configurations\" />
+    <None Remove="Domain\Configurations\" />
+    <None Remove="Microsoft.AspNetCore.Identity" />
+    <None Remove="Domain\Entities\" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Domain\Entities\Users\" />
+    <None Remove="Domain\Entities\Organizations\" />
+    <None Remove="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" />
+    <None Remove="OpenIddict" />
+    <None Remove="OpenIddict.Validation" />
+    <None Remove="OpenIddict.EntityFrameworkCore" />
+    <None Remove="OpenIddict.Core" />
+    <None Remove="OpenIddict.Validation.AspNetCore" />
+    <None Remove="OpenIddict.AspNetCore" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="MySqlConnector" />
+    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="Infrastructure\Properties\" />
+    <None Remove="Application\Account\" />
+    <None Remove="Application\Account\Services\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+    <None Remove="AspNet.Security.OpenIdConnect.Primitives" />
+    <None Remove="Infrastructure\Configurations\Auth\" />
+    <None Remove="Infrastructure\Configurations\Database\" />
+    <None Remove="Infrastructure\Configurations\Origins\" />
+    <None Remove="Application\Account\Controllers\" />
+    <None Remove="Application\Categories\" />
+    <None Remove="Application\Posts\" />
+    <None Remove="Application\Organizations\" />
+    <None Remove="Application\Profiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Configurations\" />
+    <Folder Include="Domain\Configurations\" />
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Domain\Entities\Users\" />
+    <Folder Include="Domain\Entities\Organizations\" />
+    <Folder Include="Infrastructure\Properties\" />
+    <Folder Include="Application\Account\" />
+    <Folder Include="Application\Account\Services\" />
+    <Folder Include="Infrastructure\Configurations\Auth\" />
+    <Folder Include="Infrastructure\Configurations\Database\" />
+    <Folder Include="Infrastructure\Configurations\Origins\" />
+    <Folder Include="Application\Account\Controllers\" />
+    <Folder Include="Application\Categories\" />
+    <Folder Include="Application\Posts\" />
+    <Folder Include="Application\Organizations\" />
+    <Folder Include="Application\Profiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Infrastructure\Properties\launchSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Infrastructure\Properties\launchSettings.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </None>
+  </ItemGroup>
+</Project>
