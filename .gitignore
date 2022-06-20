@@ -12,7 +12,7 @@ tarballs/
 test-results/
 
 # api complie files
-teacher-api/obj
+obj
 
 # Mac bundle stuff
 *.dmg
