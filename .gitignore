@@ -11,6 +11,9 @@ autom4te.cache/
 tarballs/
 test-results/
 
+# api complie files
+teacher-api/obj
+
 # Mac bundle stuff
 *.dmg
 *.app
