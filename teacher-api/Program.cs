@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using teacher_api.Domain.Configurations;
+using teacher_api.Infrastructure.Common.Configurations.Startups.Common.MediatR;
+using teacher_api.Infrastructure.Common.Configurations.Startups.DependencyInjections;
 using teacher_api.Infrastructure.configurations.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +19,9 @@ builder.Services.AddControllers();
 
 builder.ConfigureOrigins()
        .ConfigureDatabase()
-       .ConfigureAuth();
+       .ConfigureAuth()
+       .ConfigureMediatR()
+       .AddDependencies();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

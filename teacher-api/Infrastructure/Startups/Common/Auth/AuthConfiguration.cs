@@ -7,7 +7,7 @@ using teacher_api.Domain.Configurations;
 using teacher_api.Domain.Entities.Users;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace teacher_api.Infrastructure.configurations.Auth
+namespace teacher_api.Infrastructure.Startups.Common.Auth
 {
 	public static class Authconfiguration
     {
