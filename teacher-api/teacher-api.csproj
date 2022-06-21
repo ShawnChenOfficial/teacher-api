@@ -27,14 +27,17 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.6" />
     <PackageReference Include="AspNet.Security.OpenIdConnect.Primitives" Version="2.0.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="EFCore.BulkExtensions" Version="6.5.2" />
+    <PackageReference Include="FluentValidation" Version="11.0.3" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Application\" />
     <None Remove="Domain\" />
     <None Remove="Infrastructure\" />
-    <None Remove="Infrastructure\Configurations\" />
-    <None Remove="Domain\Configurations\" />
     <None Remove="Microsoft.AspNetCore.Identity" />
     <None Remove="Domain\Entities\" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
@@ -51,49 +54,83 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="MySqlConnector" />
     <None Remove="Pomelo.EntityFrameworkCore.MySql" />
-    <None Remove="Infrastructure\Properties\" />
     <None Remove="Application\Account\" />
     <None Remove="Application\Account\Services\" />
     <None Remove="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
     <None Remove="AspNet.Security.OpenIdConnect.Primitives" />
-    <None Remove="Infrastructure\Configurations\Auth\" />
-    <None Remove="Infrastructure\Configurations\Database\" />
-    <None Remove="Infrastructure\Configurations\Origins\" />
     <None Remove="Application\Account\Controllers\" />
     <None Remove="Application\Categories\" />
     <None Remove="Application\Posts\" />
     <None Remove="Application\Organizations\" />
     <None Remove="Application\Profiles\" />
+    <None Remove="Domain\Entities\Shared\" />
+    <None Remove="Domain\Entities\Posts\" />
+    <None Remove="Domain\Entities\Categories\" />
+    <None Remove="Application\Categories\Controllers\" />
+    <None Remove="Application\Categories\Commands\" />
+    <None Remove="Application\Categories\Commands\CreateCategory\" />
+    <None Remove="Application\Base\" />
+    <None Remove="Application\Base\Controllers\" />
+    <None Remove="MediatR" />
+    <None Remove="Infrastructure\Persistence\" />
+    <None Remove="Infrastructure\Common\Configuration\Startups\" />
+    <None Remove="Infrastructure\Persistence\Repository\" />
+    <None Remove="EFCore.BulkExtensions" />
+    <None Remove="Application\Base\Interface\" />
+    <None Remove="Application\Categories\Queries\" />
+    <None Remove="Application\Categories\Queries\GetCategories\" />
+    <None Remove="Application\Categories\Models\" />
+    <None Remove="FluentValidation" />
+    <None Remove="Application\Base\Common\" />
+    <None Remove="Infrastructure\Persistence\Configurations\" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="FluentValidation.DependencyInjectionExtensions" />
+    <None Remove="Infrastructure\Startups\" />
+    <None Remove="Infrastructure\Persistence\Configurations\Categories\" />
+    <None Remove="Infrastructure\Persistence\Configurations\Organizations\" />
+    <None Remove="Infrastructure\Persistence\Configurations\Posts\" />
+    <None Remove="Infrastructure\Persistence\Configurations\Users\" />
+    <None Remove="Infrastructure\Persistence\Extensions\" />
+    <None Remove="Application\Categories\Commands\UpdateCategory\" />
+    <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
     <Folder Include="Domain\" />
     <Folder Include="Infrastructure\" />
-    <Folder Include="Infrastructure\Configurations\" />
-    <Folder Include="Domain\Configurations\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\Entities\Users\" />
     <Folder Include="Domain\Entities\Organizations\" />
-    <Folder Include="Infrastructure\Properties\" />
     <Folder Include="Application\Account\" />
     <Folder Include="Application\Account\Services\" />
-    <Folder Include="Infrastructure\Configurations\Auth\" />
-    <Folder Include="Infrastructure\Configurations\Database\" />
-    <Folder Include="Infrastructure\Configurations\Origins\" />
     <Folder Include="Application\Account\Controllers\" />
     <Folder Include="Application\Categories\" />
     <Folder Include="Application\Posts\" />
     <Folder Include="Application\Organizations\" />
     <Folder Include="Application\Profiles\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Infrastructure\Properties\launchSettings.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Infrastructure\Properties\launchSettings.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </None>
+    <Folder Include="Domain\Entities\Shared\" />
+    <Folder Include="Domain\Entities\Posts\" />
+    <Folder Include="Domain\Entities\Categories\" />
+    <Folder Include="Application\Categories\Controllers\" />
+    <Folder Include="Application\Categories\Commands\" />
+    <Folder Include="Application\Categories\Commands\CreateCategory\" />
+    <Folder Include="Application\Base\" />
+    <Folder Include="Application\Base\Controllers\" />
+    <Folder Include="Infrastructure\Persistence\" />
+    <Folder Include="Infrastructure\Persistence\Repository\" />
+    <Folder Include="Application\Base\Interface\" />
+    <Folder Include="Application\Categories\Queries\" />
+    <Folder Include="Application\Categories\Queries\GetCategories\" />
+    <Folder Include="Application\Categories\Models\" />
+    <Folder Include="Application\Base\Common\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\" />
+    <Folder Include="Infrastructure\Startups\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\Categories\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\Organizations\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\Posts\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\Users\" />
+    <Folder Include="Infrastructure\Persistence\Extensions\" />
+    <Folder Include="Application\Categories\Commands\UpdateCategory\" />
+    <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
   </ItemGroup>
 </Project>

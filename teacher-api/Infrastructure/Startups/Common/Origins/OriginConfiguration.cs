@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using teacher_api.Domain.Configurations;
 
-namespace teacher_api.Infrastructure.configurations.Auth
+namespace teacher_api.Startups.Common.Origins
 {
 	public static class OriginConfiguration
 	{

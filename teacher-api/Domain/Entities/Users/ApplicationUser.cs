@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity;
 using teacher_api.Domain.Entities.Organizations;
+using teacher_api.Domain.Entities.Shared;
 
 namespace teacher_api.Domain.Entities.Users
 {
@@ -15,6 +16,12 @@ namespace teacher_api.Domain.Entities.Users
 		public string? OrganizationId { get; set; }
 
 		public Organization? Organization { get; set; }
+
+		public string BackgroundImagePath { get; set; } = default!;
+
+		public string ProfileImagePath { get; set; } = default!;
+
+		public Location Location { get; set; } = new Location();
 	}
 }
 
