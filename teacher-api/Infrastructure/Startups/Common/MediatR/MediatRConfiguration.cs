@@ -11,11 +11,32 @@ namespace teacher_api.Infrastructure.Startups.Common.MediatR
 		public static WebApplicationBuilder ConfigureMediatR(this WebApplicationBuilder builder)
         {
             builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-            builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+            return builder.ConfigureServices().ConfigureInfrastructures();
+        }
+
+        /// <summary>
+        /// interface/services configuration goes here
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        private static WebApplicationBuilder ConfigureServices(this WebApplicationBuilder builder)
+        {
+            return builder;
+        }
+
+        /// <summary>
+        /// repository configuration goes here
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
+        private static WebApplicationBuilder ConfigureInfrastructures(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return builder;
         }
-	}
+    }
 }
 

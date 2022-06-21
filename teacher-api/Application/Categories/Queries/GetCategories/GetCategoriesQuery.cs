@@ -6,11 +6,11 @@ using teacher_api.Domain.Entities.Categories;
 
 namespace teacher_api.Application.Categories.Queries.GetCategories
 {
-	public record GetCategoriesQuery: IRequest<List<CategoryGet>>
+	public record GetCategoriesQuery: IRequest<List<CategoryDto>>
 	{
 	}
 
-    public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQuery, List<CategoryGet>>
+    public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQuery, List<CategoryDto>>
     {
         private readonly IRepository<Category> categoryRepo;
 
@@ -19,11 +19,11 @@ namespace teacher_api.Application.Categories.Queries.GetCategories
             this.categoryRepo = categoryRepo;
         }
 
-        public Task<List<CategoryGet>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
+        public Task<List<CategoryDto>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
         {
             var data = categoryRepo.Get()
                 .Where(w => !w.Archived)
-                .Select(s => new CategoryGet
+                .Select(s => new CategoryDto
                 {
                     Id = s.Id,
                     Name = s.Name

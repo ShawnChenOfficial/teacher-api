@@ -14,7 +14,6 @@ namespace teacher_api.Infrastructure.Startups.Common.Database
                 opt.UseOpenIddict();
             });
 
-
             return builder;
         }
     }

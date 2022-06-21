@@ -1,7 +1,7 @@
 ﻿using System;
 namespace teacher_api.Application.Categories.Models
 {
-	public class CategoryGet
+	public class CategoryDto
 	{
 		public int Id { get; set; }
 
