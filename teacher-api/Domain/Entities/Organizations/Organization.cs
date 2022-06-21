@@ -1,6 +1,4 @@
-﻿using System;
-using teacher_api.Domain.Entities.Shared;
-using teacher_api.Domain.Entities.Users;
+﻿using teacher_api.Domain.Entities.Shared;
 
 namespace teacher_api.Domain.Entities.Organizations
 {
