@@ -2,11 +2,11 @@
 using EFCore.BulkExtensions;
 using teacher_api.Domain.Configurations;
 
-namespace teacher_api.Domain.Extensions
+namespace teacher_api.Infrastructure.Persistence.Extensions
 {
-	public static class DbContextExtensions
-	{
-		public static void IdentifiedInsert<T>(this ApplicationDbContext context, IList<T> items) where T: class
+    public static class DbContextExtensions
+    {
+        public static void IdentifiedInsert<T>(this ApplicationDbContext context, IList<T> items) where T : class
         {
             var bulkConfig = new BulkConfig
             {
@@ -25,6 +25,6 @@ namespace teacher_api.Domain.Extensions
 
             context.BulkInsert(items, bulkConfig);
         }
-	}
+    }
 }
 

@@ -77,7 +77,6 @@
     <None Remove="Infrastructure\Persistence\Repository\" />
     <None Remove="EFCore.BulkExtensions" />
     <None Remove="Application\Base\Interface\" />
-    <None Remove="Domain\Extensions\" />
     <None Remove="Application\Categories\Queries\" />
     <None Remove="Application\Categories\Queries\GetCategories\" />
     <None Remove="Application\Categories\Models\" />
@@ -91,6 +90,7 @@
     <None Remove="Infrastructure\Persistence\Configurations\Organizations\" />
     <None Remove="Infrastructure\Persistence\Configurations\Posts\" />
     <None Remove="Infrastructure\Persistence\Configurations\Users\" />
+    <None Remove="Infrastructure\Persistence\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -117,7 +117,6 @@
     <Folder Include="Infrastructure\Persistence\" />
     <Folder Include="Infrastructure\Persistence\Repository\" />
     <Folder Include="Application\Base\Interface\" />
-    <Folder Include="Domain\Extensions\" />
     <Folder Include="Application\Categories\Queries\" />
     <Folder Include="Application\Categories\Queries\GetCategories\" />
     <Folder Include="Application\Categories\Models\" />
@@ -128,5 +127,6 @@
     <Folder Include="Infrastructure\Persistence\Configurations\Organizations\" />
     <Folder Include="Infrastructure\Persistence\Configurations\Posts\" />
     <Folder Include="Infrastructure\Persistence\Configurations\Users\" />
+    <Folder Include="Infrastructure\Persistence\Extensions\" />
   </ItemGroup>
 </Project>

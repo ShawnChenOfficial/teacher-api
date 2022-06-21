@@ -19,9 +19,9 @@ namespace teacher_api.Domain.Configurations
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder mb)
         {
-            base.OnModelCreating(mb);
-
             mb.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            base.OnModelCreating(mb);
         }
     }
 }
