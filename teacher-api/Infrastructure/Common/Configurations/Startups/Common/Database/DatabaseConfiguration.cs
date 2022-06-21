@@ -3,7 +3,7 @@ using teacher_api.Domain.Configurations;
 
 namespace teacher_api.Infrastructure.configurations.Auth
 {
-	public static class Databaseconfiguration
+	public static class DatabaseConfiguration
 	{
 		public static WebApplicationBuilder ConfigureDatabase(this WebApplicationBuilder builder)
 		{

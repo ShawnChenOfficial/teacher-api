@@ -15,6 +15,10 @@ namespace teacher_api.Domain.Entities.Users
 		public string? OrganizationId { get; set; }
 
 		public Organization? Organization { get; set; }
+
+		public string BackgroundImagePath { get; set; } = default!;
+
+		public string ProfileImagePath { get; set; } = default!;
 	}
 }
 
