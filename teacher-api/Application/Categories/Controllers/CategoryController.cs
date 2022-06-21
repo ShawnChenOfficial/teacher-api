@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using teacher_api.Application.Base.Controllers;
 using teacher_api.Application.Categories.Commands.CreateCategory;
+using teacher_api.Application.Categories.Commands.RemoveCategory;
+using teacher_api.Application.Categories.Commands.UpdateCategory;
 using teacher_api.Application.Categories.Queries.GetCategories;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,8 +33,15 @@ namespace teacher_api.Application.Categories.Controllers
         }
 
         [Route("")]
-        [HttpPost]
-        public async Task<IActionResult> Create(CreateCategoryCommand command)
+        [HttpPatch]
+        public async Task<IActionResult> Update(UpdateCategoryCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+
+        [Route("")]
+        [HttpDelete]
+        public async Task<IActionResult> Remove(RemoveCategoryCommand command)
         {
             return Ok(await Mediator.Send(command));
         }

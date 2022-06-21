@@ -91,6 +91,8 @@
     <None Remove="Infrastructure\Persistence\Configurations\Posts\" />
     <None Remove="Infrastructure\Persistence\Configurations\Users\" />
     <None Remove="Infrastructure\Persistence\Extensions\" />
+    <None Remove="Application\Categories\Commands\UpdateCategory\" />
+    <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -128,5 +130,7 @@
     <Folder Include="Infrastructure\Persistence\Configurations\Posts\" />
     <Folder Include="Infrastructure\Persistence\Configurations\Users\" />
     <Folder Include="Infrastructure\Persistence\Extensions\" />
+    <Folder Include="Application\Categories\Commands\UpdateCategory\" />
+    <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
   </ItemGroup>
 </Project>

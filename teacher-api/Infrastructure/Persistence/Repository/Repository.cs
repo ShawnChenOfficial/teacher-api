@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using teacher_api.Application.Base.Interface;
 using teacher_api.Domain.Configurations;
-using teacher_api.Domain.Extensions;
+using teacher_api.Infrastructure.Persistence.Extensions;
 
 namespace teacher_api.Infrastructure.Persistence.Repository
 {
