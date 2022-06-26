@@ -14,6 +14,10 @@ namespace teacher_api.Domain.Entities.Organizations
 		public string RoleId { get; set; } = default!;
 
 		public OrganizationRole? Role { get; set; }
+
+		public int OrganizationId { get; set; }
+
+		public Organization? Organization { get; set; }
 	}
 }
 
