@@ -14,7 +14,7 @@ namespace teacher_api.Infrastructure.configurations.Auth
                     builder.AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()
-                    .WithOrigins("http://locahost:4200");
+                    .WithOrigins("http://localhost:4200");
                 });
             });
 

@@ -30,7 +30,7 @@ namespace teacher_api.Application.Account.Services
 
             if (request == null)
             {
-                throw new Exception("Unknown Reqeust");
+                return BadRequest("Unknown Reqeust");
             }
 
             if (request.IsRefreshTokenGrantType())

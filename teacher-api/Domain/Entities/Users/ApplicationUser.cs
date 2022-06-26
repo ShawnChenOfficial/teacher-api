@@ -10,11 +10,22 @@ namespace teacher_api.Domain.Entities.Users
 
 		public string Lastname { get; set; } = default!;
 
-		public bool OrganizationUser { get; set; }
+		public string Title { get; set; } = default!;
 
-		public string? OrganizationId { get; set; }
+		public UserGender Gender { get; set; } = default!;
+
+        public DateTime DateOfBirth { get; set; }
+
+        public string? OrganizationId { get; set; }
 
 		public Organization? Organization { get; set; }
 	}
+
+	public enum UserGender
+    {
+		Female,
+		Male,
+		Other
+    }
 }
 

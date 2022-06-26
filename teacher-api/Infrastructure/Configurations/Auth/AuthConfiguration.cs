@@ -71,7 +71,10 @@ namespace teacher_api.Infrastructure.configurations.Auth
                         opt.AddSigningCertificate(signingCert);
                     }
 
-					opt.UseAspNetCore().EnableLogoutEndpointPassthrough();
+					opt.UseAspNetCore()
+					   .EnableAuthorizationEndpointPassthrough() // Add this line.
+					   .EnableTokenEndpointPassthrough()
+					   .EnableLogoutEndpointPassthrough();
 
 					opt.AcceptAnonymousClients();
 				})
@@ -81,7 +84,7 @@ namespace teacher_api.Infrastructure.configurations.Auth
 					opt.UseAspNetCore();
                 });
 
-			return builder.ConfigureServices().ConfigureInfrastructures();
+            return builder.ConfigureServices().ConfigureInfrastructures();
         }
 
         /// <summary>

@@ -16,7 +16,10 @@ builder.Services.AddControllers();
 
 builder.ConfigureOrigins()
        .ConfigureDatabase()
-       .ConfigureAuth();
+       .ConfigureAuth()
+       .ConfigureMediatR()
+       .ConfigureDependencies();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -31,8 +34,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseWebSockets();
+
+app.UseCors("ALLOWSPECIFICORIGINS");
+
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
