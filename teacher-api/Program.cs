@@ -1,4 +1,6 @@
-﻿using teacher_api.Infrastructure.Startups.Common.Auth;
+﻿using System.Text.Json.Serialization;
+using teacher_api.Application.Base.Common;
+using teacher_api.Infrastructure.Startups.Common.Auth;
 using teacher_api.Infrastructure.Startups.Common.Database;
 using teacher_api.Infrastructure.Startups.Common.MediatR;
 using teacher_api.Startups.Common.Origins;
@@ -11,7 +13,11 @@ builder.Services.AddSignalR();
 builder.Services.AddMemoryCache();
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add<ApiExceptionFilterAttribute>())
+    .AddJsonOptions(builder =>
+    {
+        builder.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 builder.ConfigureOrigins()
        .ConfigureDatabase()

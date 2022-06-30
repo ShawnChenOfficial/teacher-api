@@ -25,7 +25,7 @@ namespace teacher_api.Domain.Entities.Users
 
 		public string ProfileImagePath { get; set; } = default!;
 
-		public Location Location { get; set; } = new Location();
+		public Location? Location { get; set; }
 	}
 
 	public enum UserGender

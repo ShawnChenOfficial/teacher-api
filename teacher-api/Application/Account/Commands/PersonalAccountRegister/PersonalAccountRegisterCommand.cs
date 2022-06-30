@@ -22,9 +22,7 @@ namespace teacher_api.Application.Account.Commands.PersonalAccountRegister
 
         public string Title { get; set; } = default!;
 
-        public UserGender Gender { get; set; } = default!;
-
-        public DateTime DateOfBirth { get; set; }
+        public UserGender Gender { get; set; }
 
         public string Phone { get; set; } = default!;
 
@@ -50,6 +48,9 @@ namespace teacher_api.Application.Account.Commands.PersonalAccountRegister
                 Lastname = request.LastName,
                 Gender = request.Gender,
                 PhoneNumber = request.Phone,
+                Title = request.Title,
+                BackgroundImagePath = "",
+                ProfileImagePath = "",
                 Location = new Location()
                 {
                     City = request.City

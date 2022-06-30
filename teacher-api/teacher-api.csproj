@@ -93,6 +93,9 @@
     <None Remove="Infrastructure\Persistence\Extensions\" />
     <None Remove="Application\Categories\Commands\UpdateCategory\" />
     <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
+    <None Remove="Migrations\" />
+    <None Remove="Infrastructure\Persistence\Configurations\DataSeeder\" />
+    <None Remove="Application\Base\Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -132,5 +135,8 @@
     <Folder Include="Infrastructure\Persistence\Extensions\" />
     <Folder Include="Application\Categories\Commands\UpdateCategory\" />
     <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Infrastructure\Persistence\Configurations\DataSeeder\" />
+    <Folder Include="Application\Base\Exceptions\" />
   </ItemGroup>
 </Project>

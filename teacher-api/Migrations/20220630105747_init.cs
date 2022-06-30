@@ -133,15 +133,15 @@ namespace teacher_api.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProfileImagePath = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Number = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Number = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Street = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Street = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Suburb = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_City = table.Column<string>(type: "longtext", nullable: false)
+                    Location_City = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Region = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Region = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Verified = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
@@ -245,15 +245,15 @@ namespace teacher_api.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProfileImagePath = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Number = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Number = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Street = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Street = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Suburb = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_City = table.Column<string>(type: "longtext", nullable: false)
+                    Location_City = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Region = table.Column<string>(type: "longtext", nullable: false)
+                    Location_Region = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
