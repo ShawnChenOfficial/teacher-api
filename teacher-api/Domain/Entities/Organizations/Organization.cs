@@ -6,7 +6,9 @@ namespace teacher_api.Domain.Entities.Organizations
 	{
 		public int Id { get; set; }
 
-		public string Name { get; set; } = default!;
+        public string OrganizationUniqueIdentifier { get; set; } = default!;
+
+        public string Name { get; set; } = default!;
 
         public string Email { get; set; } = default!;
 

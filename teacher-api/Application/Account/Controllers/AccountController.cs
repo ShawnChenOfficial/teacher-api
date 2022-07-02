@@ -33,7 +33,7 @@ namespace teacher_api.Application.Account.Controllers
 
         [HttpPost]
         [Route("register/personal")]
-        public async Task<IActionResult> Register(PersonalAccountRegisterCommand command)
+        public async Task<IActionResult> Register([FromBody]PersonalAccountRegisterCommand command)
         {
             return Ok(await Mediator.Send(command));
         }

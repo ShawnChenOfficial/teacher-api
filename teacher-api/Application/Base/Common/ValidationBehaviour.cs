@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentValidation;
 using MediatR;
+using ValidationException = teacher_api.Application.Base.Exceptions.ValidationException;
 
 namespace teacher_api.Application.Base.Common
 {
@@ -19,7 +20,7 @@ namespace teacher_api.Application.Base.Common
             {
                 var context = new ValidationContext<TRequest>(request);
 
-                var errors = _validators.Select(x => x.Validate(context)).SelectMany(x => x.Errors).Where(x => x != null).ToList();
+                var errors = _validators.Select(async x => await x.ValidateAsync(context)).SelectMany(x => x.Result.Errors).Where(x => x != null).ToList();
 
                 if (errors.Any())
                 {

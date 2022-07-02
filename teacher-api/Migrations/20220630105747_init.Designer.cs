@@ -11,7 +11,7 @@ using teacher_api.Domain.Configurations;
 namespace teacher_api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220626101212_init")]
+    [Migration("20220630105747_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -671,23 +671,18 @@ namespace teacher_api.Migrations
                                 .HasColumnType("int");
 
                             b1.Property<string>("City")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Number")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Region")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Street")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Suburb")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.HasKey("OrganizationId");
@@ -758,23 +753,18 @@ namespace teacher_api.Migrations
                                 .HasColumnType("varchar(255)");
 
                             b1.Property<string>("City")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Number")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Region")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Street")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.Property<string>("Suburb")
-                                .IsRequired()
                                 .HasColumnType("longtext");
 
                             b1.HasKey("ApplicationUserId");
