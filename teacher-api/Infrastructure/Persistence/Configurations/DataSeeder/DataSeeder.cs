@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using teacher_api.Domain.Entities.Categories;
+using teacher_api.Domain.Entities.Organizations;
 using teacher_api.Domain.Entities.Users;
 
 namespace teacher_api.Infrastructure.Persistence.Configurations.DataSeeder
@@ -52,6 +53,22 @@ namespace teacher_api.Infrastructure.Persistence.Configurations.DataSeeder
             });
 
             mb.Entity<IdentityUserRole<string>>().HasData(userRoles);
+
+
+            var organizationRoles = new List<OrganizationRole>() {
+                new OrganizationRole
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Role = "Admin"
+                },
+                new OrganizationRole
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Role = "User"
+                }
+            };
+
+            mb.Entity<OrganizationRole>().HasData(organizationRoles);
 
             return mb;
         }

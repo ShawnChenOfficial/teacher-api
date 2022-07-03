@@ -17,7 +17,7 @@ namespace teacher_api.Domain.Entities.Users
 
         public DateTime DateOfBirth { get; set; }
 
-        public string? OrganizationId { get; set; }
+        public int? OrganizationId { get; set; }
 
 		public Organization? Organization { get; set; }
 

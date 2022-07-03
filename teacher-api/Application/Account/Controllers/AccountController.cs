@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using teacher_api.Application.Account.Commands.OrganizationAccountRegister;
 using teacher_api.Application.Account.Commands.PersonalAccountRegister;
 using teacher_api.Application.Account.Services;
 using teacher_api.Application.Base.Controllers;
@@ -33,17 +34,17 @@ namespace teacher_api.Application.Account.Controllers
 
         [HttpPost]
         [Route("register/personal")]
-        public async Task<IActionResult> Register([FromBody]PersonalAccountRegisterCommand command)
+        public async Task<IActionResult> PersonalRegister([FromBody] PersonalAccountRegisterCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
 
-        //[HttpPost]
-        //[Route("register/organization")]
-        //public async Task<IActionResult> Register(PersonalAccountRegisterCommand command)
-        //{
-        //    return Ok(await Mediator.Send(command));
-        //}
+        [HttpPost]
+        [Route("register/organization")]
+        public async Task<IActionResult> OrganizationRegister([FromBody] OrganizationAccountRegisterCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
     }
 }
 

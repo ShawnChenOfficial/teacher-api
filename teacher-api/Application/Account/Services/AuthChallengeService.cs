@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
+using teacher_api.Application.Base.Interface;
+using teacher_api.Domain.Entities.Organizations;
 using teacher_api.Domain.Entities.Users;
 
 namespace teacher_api.Application.Account.Services
@@ -16,12 +18,14 @@ namespace teacher_api.Application.Account.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly AuthService _authService;
+        private readonly IRepository<Organization> _orgRepo;
 
-        public AuthChallengeService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, AuthService authService)
+        public AuthChallengeService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, AuthService authService, IRepository<Organization> orgRepo)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _authService = authService;
+            _orgRepo = orgRepo;
         }
 
         public async Task<IActionResult> Challenge(HttpContext context)
@@ -65,6 +69,11 @@ namespace teacher_api.Application.Account.Services
                 return _authService.InvalidRefreshToken();
             }
 
+            if (user.OrganizationId.HasValue && !IsOrganizationVerified(user.OrganizationId.Value))
+            {
+                return _authService.UnverifiedOrganization();
+            }
+
             // Ensure the user is still allowed to sign in.
             if (!await _signInManager.CanSignInAsync(user))
             {
@@ -78,11 +87,16 @@ namespace teacher_api.Application.Account.Services
 
         private async Task<IActionResult> TryGrantAccessToken(OpenIddictRequest request)
         {
-            var user = await _userManager.FindByNameAsync(request.Username);
+            var user = await _userManager.FindByEmailAsync(request.Username);
 
             if (user == null)
             {
                 return _authService.InvalidCredencials();
+            }
+
+            if (user.OrganizationId.HasValue && !IsOrganizationVerified(user.OrganizationId.Value))
+            {
+                return _authService.UnverifiedOrganization();
             }
 
             // Validate the username/password parameters and ensure the account is not locked out.
@@ -97,7 +111,13 @@ namespace teacher_api.Application.Account.Services
                 return await _authService.GrantAccessToken(user);
             }
         }
-        
+
+        private bool IsOrganizationVerified(int id)
+        {
+            var org = _orgRepo.Find(id);
+
+            return org == null ? false : org.Verified;
+        }
     }
 }
 

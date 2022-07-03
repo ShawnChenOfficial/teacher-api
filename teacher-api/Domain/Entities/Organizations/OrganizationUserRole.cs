@@ -5,8 +5,6 @@ namespace teacher_api.Domain.Entities.Organizations
 {
 	public class OrganizationUserRole
 	{
-		public string Id { get; set; } = default!;
-
 		public string UserId { get; set; } = default!;
 
 		public ApplicationUser? User { get; set; }

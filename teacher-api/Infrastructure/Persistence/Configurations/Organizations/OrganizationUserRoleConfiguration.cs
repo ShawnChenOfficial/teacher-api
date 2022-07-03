@@ -9,7 +9,7 @@ namespace teacher_api.Infrastructure.Persistence.Configurations.Organizations
     {
         public void Configure(EntityTypeBuilder<OrganizationUserRole> builder)
         {
-            builder.HasKey(h => h.Id);
+            builder.HasKey(h => new { h.OrganizationId, h.RoleId, h.UserId });
 
             builder.HasOne(h => h.Organization).WithMany(w => w.Users).HasForeignKey(h => h.OrganizationId);
 
