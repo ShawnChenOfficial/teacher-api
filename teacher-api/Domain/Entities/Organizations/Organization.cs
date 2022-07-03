@@ -14,7 +14,7 @@ namespace teacher_api.Domain.Entities.Organizations
 
         public string Phone { get; set; } = default!;
 
-        public DateTime StartDate { get; set; }
+        public string Region { get; set; } = default!;
 
         public string Description { get; set; } = default!;
 

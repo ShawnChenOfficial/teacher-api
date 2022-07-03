@@ -93,7 +93,6 @@
     <None Remove="Infrastructure\Persistence\Extensions\" />
     <None Remove="Application\Categories\Commands\UpdateCategory\" />
     <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
-    <None Remove="Migrations\" />
     <None Remove="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <None Remove="Application\Base\Exceptions\" />
     <None Remove="Application\Organizations\Controllers\" />
@@ -103,6 +102,7 @@
     <None Remove="Application\Organizations\Queries\SearchOrganizations\" />
     <None Remove="Application\Organizations\Dtos\" />
     <None Remove="Application\Base\Queries\" />
+    <None Remove="Application\Account\Commands\OrganizationAccountRegister\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -142,7 +142,6 @@
     <Folder Include="Infrastructure\Persistence\Extensions\" />
     <Folder Include="Application\Categories\Commands\UpdateCategory\" />
     <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <Folder Include="Application\Base\Exceptions\" />
     <Folder Include="Application\Organizations\Controllers\" />
@@ -152,5 +151,6 @@
     <Folder Include="Application\Organizations\Queries\SearchOrganizations\" />
     <Folder Include="Application\Organizations\Dtos\" />
     <Folder Include="Application\Base\Queries\" />
+    <Folder Include="Application\Account\Commands\OrganizationAccountRegister\" />
   </ItemGroup>
 </Project>

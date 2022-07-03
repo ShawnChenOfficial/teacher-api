@@ -116,6 +116,18 @@ namespace teacher_api.Application.Account.Services
             return Forbid(properties, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
         }
 
+        public IActionResult UnverifiedOrganization()
+        {
+            var properties = new AuthenticationProperties(new Dictionary<string, string?>
+            {
+                [OpenIddictServerAspNetCoreConstants.Properties.Error] = Errors.InvalidGrant,
+                [OpenIddictServerAspNetCoreConstants.Properties.ErrorDescription] =
+                                    "Trying to login the admin account for an unverified orgniaztion. Please contact with us to verify your organization."
+            });
+
+            return Forbid(properties, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+        }
+
     }
 }
 

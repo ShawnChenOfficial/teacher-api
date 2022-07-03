@@ -47,29 +47,29 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d9617603-cd3c-4ab7-83bc-744951f28528",
-                            ConcurrencyStamp = "75730882-38ce-4e1e-8648-aa151f8c8c49",
+                            Id = "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b",
+                            ConcurrencyStamp = "920a3004-0f5a-4ec7-b010-00bda56b1fff",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "5f58ca37-e0da-4d6d-80da-ca835b613321",
-                            ConcurrencyStamp = "438d8ac0-c27d-41ec-bc54-7cd0bba34bb8",
+                            Id = "9f9b3815-5b9e-49f1-b191-d86a691d4ccf",
+                            ConcurrencyStamp = "95a44728-c598-4605-8f3c-43cf9326ccb4",
                             Name = "OrganizationAdmin",
                             NormalizedName = "ORGANIZATIONADMIN"
                         },
                         new
                         {
-                            Id = "2e314efc-9ddb-41f4-b018-78ab8b7c10b9",
-                            ConcurrencyStamp = "35bd640d-6b6e-4228-9734-bb528c3c8132",
+                            Id = "f595b98d-1a7b-4e6a-9802-b5f2a893f85d",
+                            ConcurrencyStamp = "05c5a6c8-ea7a-4ff0-9ad7-02c226f23a09",
                             Name = "OrganizationUser",
                             NormalizedName = "ORGANIZATIONUSER"
                         },
                         new
                         {
-                            Id = "61f34500-e388-48c1-932a-d378be8d3733",
-                            ConcurrencyStamp = "f3970de2-3b76-4945-be4a-566456f2668a",
+                            Id = "18037d50-667d-4152-9dfd-7574172766f8",
+                            ConcurrencyStamp = "d3bbb8f0-e361-4f85-8fdf-8e6eb9506128",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -162,8 +162,8 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "5a729fda-bbc6-4e52-956f-2ffa45e686c8",
-                            RoleId = "d9617603-cd3c-4ab7-83bc-744951f28528"
+                            UserId = "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855",
+                            RoleId = "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b"
                         });
                 });
 
@@ -426,6 +426,10 @@ namespace teacher_api.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("OrganizationUniqueIdentifier")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -434,8 +438,9 @@ namespace teacher_api.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("Verified")
                         .HasColumnType("tinyint(1)");
@@ -457,27 +462,32 @@ namespace teacher_api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrganizationRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ed99a938-be79-470d-be7c-a098166d0ccf",
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            Id = "3e1785a4-9e16-43a3-9821-3a3f5bc0668c",
+                            Role = "User"
+                        });
                 });
 
             modelBuilder.Entity("teacher_api.Domain.Entities.Organizations.OrganizationUserRole", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
-
                     b.Property<int>("OrganizationId")
                         .HasColumnType("int");
 
                     b.Property<string>("RoleId")
-                        .IsRequired()
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizationId");
+                    b.HasKey("OrganizationId", "RoleId", "UserId");
 
                     b.HasIndex("RoleId");
 
@@ -576,10 +586,7 @@ namespace teacher_api.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
 
-                    b.Property<string>("OrganizationId")
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("OrganizationId1")
+                    b.Property<int?>("OrganizationId")
                         .HasColumnType("int");
 
                     b.Property<string>("PasswordHash")
@@ -618,17 +625,17 @@ namespace teacher_api.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("OrganizationId1");
+                    b.HasIndex("OrganizationId");
 
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "5a729fda-bbc6-4e52-956f-2ffa45e686c8",
+                            Id = "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855",
                             AccessFailedCount = 0,
                             BackgroundImagePath = "",
-                            ConcurrencyStamp = "f71a188b-8387-458b-bb4f-f6eae8794b1a",
+                            ConcurrencyStamp = "0f55b8e7-54ca-4c1b-8d71-8239be53b33a",
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "shawnchenofficial@gmail.com",
                             EmailConfirmed = false,
@@ -638,10 +645,10 @@ namespace teacher_api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SHAWNCHENOFFICIAL@GMAIL.COM",
                             NormalizedUserName = "SHAWNCHENOFFICIAL@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPAA1b857rFPVqwOCB+et36O4u250ZvQ1t9mmtPfbmjQQqAccGLS+gJ1YAkHGmg3Ig==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELJdznT55S0mBCwAInOVfavMeLD6j5tJUdYGQN7ZoVmiktqnoGmHF3gTLPzbuLGFIQ==",
                             PhoneNumberConfirmed = false,
                             ProfileImagePath = "",
-                            SecurityStamp = "ebdd7279-1aef-4152-a8ad-2a1e1405f9bd",
+                            SecurityStamp = "0b99b079-1c79-4859-a038-7c24c511c4dd",
                             Title = "Mrs",
                             TwoFactorEnabled = false,
                             UserName = "shawnchenofficial@gmail.com"
@@ -730,17 +737,14 @@ namespace teacher_api.Migrations
                             b1.Property<int>("OrganizationId")
                                 .HasColumnType("int");
 
+                            b1.Property<string>("Address")
+                                .HasColumnType("longtext");
+
                             b1.Property<string>("City")
                                 .HasColumnType("longtext");
 
-                            b1.Property<string>("Number")
-                                .HasColumnType("longtext");
-
-                            b1.Property<string>("Region")
-                                .HasColumnType("longtext");
-
-                            b1.Property<string>("Street")
-                                .HasColumnType("longtext");
+                            b1.Property<int?>("PostCode")
+                                .HasColumnType("int");
 
                             b1.Property<string>("Suburb")
                                 .HasColumnType("longtext");
@@ -805,24 +809,21 @@ namespace teacher_api.Migrations
                 {
                     b.HasOne("teacher_api.Domain.Entities.Organizations.Organization", "Organization")
                         .WithMany()
-                        .HasForeignKey("OrganizationId1");
+                        .HasForeignKey("OrganizationId");
 
                     b.OwnsOne("teacher_api.Domain.Entities.Shared.Location", "Location", b1 =>
                         {
                             b1.Property<string>("ApplicationUserId")
                                 .HasColumnType("varchar(255)");
 
+                            b1.Property<string>("Address")
+                                .HasColumnType("longtext");
+
                             b1.Property<string>("City")
                                 .HasColumnType("longtext");
 
-                            b1.Property<string>("Number")
-                                .HasColumnType("longtext");
-
-                            b1.Property<string>("Region")
-                                .HasColumnType("longtext");
-
-                            b1.Property<string>("Street")
-                                .HasColumnType("longtext");
+                            b1.Property<int?>("PostCode")
+                                .HasColumnType("int");
 
                             b1.Property<string>("Suburb")
                                 .HasColumnType("longtext");

@@ -39,11 +39,10 @@ namespace teacher_api.Application.Organizations.Queries.SearchOrganizations
                 ProfileImagePath = s.ProfileImagePath,
                 Location = s.Location == null ? new Location() : new Location
                 {
-                    Number = s.Location.Number,
-                    Street = s.Location.Street,
+                    Address = s.Location.Address,
                     Suburb = s.Location.Suburb,
                     City = s.Location.City,
-                    Region = s.Location.Region
+                    PostCode = s.Location.PostCode
                 },
                 Verified = s.Verified,
                 UserCount = s.Users.Count(),
