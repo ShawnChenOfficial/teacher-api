@@ -9,6 +9,8 @@ namespace teacher_api.Infrastructure.Startups.Common.Database
 	{
 		public static WebApplicationBuilder ConfigureDependencies(this WebApplicationBuilder builder)
 		{
+            builder.Services.AddMemoryCache();
+
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             return builder;

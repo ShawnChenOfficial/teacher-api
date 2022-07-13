@@ -92,7 +92,6 @@
     <None Remove="Infrastructure\Persistence\Configurations\Users\" />
     <None Remove="Infrastructure\Persistence\Extensions\" />
     <None Remove="Application\Categories\Commands\UpdateCategory\" />
-    <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
     <None Remove="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <None Remove="Application\Base\Exceptions\" />
     <None Remove="Application\Organizations\Controllers\" />
@@ -103,6 +102,9 @@
     <None Remove="Application\Organizations\Dtos\" />
     <None Remove="Application\Base\Queries\" />
     <None Remove="Application\Account\Commands\OrganizationAccountRegister\" />
+    <None Remove="Infrastructure\Middlewares\" />
+    <None Remove="Infrastructure\Middlewares\Auth\" />
+    <None Remove="Infrastructure\Cache\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -141,7 +143,6 @@
     <Folder Include="Infrastructure\Persistence\Configurations\Users\" />
     <Folder Include="Infrastructure\Persistence\Extensions\" />
     <Folder Include="Application\Categories\Commands\UpdateCategory\" />
-    <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
     <Folder Include="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <Folder Include="Application\Base\Exceptions\" />
     <Folder Include="Application\Organizations\Controllers\" />
@@ -152,5 +153,8 @@
     <Folder Include="Application\Organizations\Dtos\" />
     <Folder Include="Application\Base\Queries\" />
     <Folder Include="Application\Account\Commands\OrganizationAccountRegister\" />
+    <Folder Include="Infrastructure\Middlewares\" />
+    <Folder Include="Infrastructure\Middlewares\Auth\" />
+    <Folder Include="Infrastructure\Cache\" />
   </ItemGroup>
 </Project>

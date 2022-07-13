@@ -503,30 +503,40 @@ namespace teacher_api.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "18037d50-667d-4152-9dfd-7574172766f8", "d3bbb8f0-e361-4f85-8fdf-8e6eb9506128", "User", "USER" },
-                    { "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b", "920a3004-0f5a-4ec7-b010-00bda56b1fff", "Admin", "ADMIN" },
-                    { "9f9b3815-5b9e-49f1-b191-d86a691d4ccf", "95a44728-c598-4605-8f3c-43cf9326ccb4", "OrganizationAdmin", "ORGANIZATIONADMIN" },
-                    { "f595b98d-1a7b-4e6a-9802-b5f2a893f85d", "05c5a6c8-ea7a-4ff0-9ad7-02c226f23a09", "OrganizationUser", "ORGANIZATIONUSER" }
+                    { "244414ea-c50b-45a1-8b8e-9b4975964f3d", "dbb10149-5a2e-4a0e-816c-97c1b67059bd", "OrganizationUser", "ORGANIZATIONUSER" },
+                    { "5417f708-8e02-49ea-ab20-8ac3c270cbc6", "54cc150c-aa43-44e5-9b29-92ea1bb83f30", "User", "USER" },
+                    { "758466db-5ffe-4b2f-9489-0e56ac673e50", "840d7239-db5b-4dc7-bcfc-50b3ce697557", "Admin", "ADMIN" },
+                    { "78a893b5-e010-4b45-8258-0d0651385ba1", "ef7254f3-5dac-4a06-9152-3a99d411c8cf", "OrganizationAdmin", "ORGANIZATIONADMIN" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "BackgroundImagePath", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "OrganizationId", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImagePath", "SecurityStamp", "Title", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855", 0, "", "0f55b8e7-54ca-4c1b-8d71-8239be53b33a", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAELJdznT55S0mBCwAInOVfavMeLD6j5tJUdYGQN7ZoVmiktqnoGmHF3gTLPzbuLGFIQ==", null, false, "", "0b99b079-1c79-4859-a038-7c24c511c4dd", "Mrs", false, "shawnchenofficial@gmail.com" });
+                values: new object[] { "60b627e8-dd28-4bc2-8aae-2bddee21e4c2", 0, "", "9db4cfdf-5ab6-43f7-8554-141cbe85b1e0", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAEC4+BKXmXGSWZLRdOBnRNwG2SoJJ6kCUKehDwn3PrLPWRjLFJYIt9wX56QB+YDJp+A==", null, false, "", "6911789e-dbbe-4e06-b28e-ebe4c3eac243", "Mrs", false, "shawnchenofficial@gmail.com" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Archived", "Name" },
+                values: new object[,]
+                {
+                    { 1, false, "Math" },
+                    { 2, false, "Chemistry" },
+                    { 3, false, "Physic" }
+                });
 
             migrationBuilder.InsertData(
                 table: "OrganizationRole",
                 columns: new[] { "Id", "Role" },
                 values: new object[,]
                 {
-                    { "3e1785a4-9e16-43a3-9821-3a3f5bc0668c", "User" },
-                    { "ed99a938-be79-470d-be7c-a098166d0ccf", "Admin" }
+                    { "5ac94f00-a03b-4234-875a-18061564e0aa", "User" },
+                    { "b082fdac-d36d-4b43-af4c-d71651e70071", "Admin" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b", "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855" });
+                values: new object[] { "758466db-5ffe-4b2f-9489-0e56ac673e50", "60b627e8-dd28-4bc2-8aae-2bddee21e4c2" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

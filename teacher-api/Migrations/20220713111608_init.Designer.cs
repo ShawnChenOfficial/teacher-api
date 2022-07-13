@@ -11,7 +11,7 @@ using teacher_api.Domain.Configurations;
 namespace teacher_api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220703063757_init")]
+    [Migration("20220713111608_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,29 +49,29 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b",
-                            ConcurrencyStamp = "920a3004-0f5a-4ec7-b010-00bda56b1fff",
+                            Id = "758466db-5ffe-4b2f-9489-0e56ac673e50",
+                            ConcurrencyStamp = "840d7239-db5b-4dc7-bcfc-50b3ce697557",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "9f9b3815-5b9e-49f1-b191-d86a691d4ccf",
-                            ConcurrencyStamp = "95a44728-c598-4605-8f3c-43cf9326ccb4",
+                            Id = "78a893b5-e010-4b45-8258-0d0651385ba1",
+                            ConcurrencyStamp = "ef7254f3-5dac-4a06-9152-3a99d411c8cf",
                             Name = "OrganizationAdmin",
                             NormalizedName = "ORGANIZATIONADMIN"
                         },
                         new
                         {
-                            Id = "f595b98d-1a7b-4e6a-9802-b5f2a893f85d",
-                            ConcurrencyStamp = "05c5a6c8-ea7a-4ff0-9ad7-02c226f23a09",
+                            Id = "244414ea-c50b-45a1-8b8e-9b4975964f3d",
+                            ConcurrencyStamp = "dbb10149-5a2e-4a0e-816c-97c1b67059bd",
                             Name = "OrganizationUser",
                             NormalizedName = "ORGANIZATIONUSER"
                         },
                         new
                         {
-                            Id = "18037d50-667d-4152-9dfd-7574172766f8",
-                            ConcurrencyStamp = "d3bbb8f0-e361-4f85-8fdf-8e6eb9506128",
+                            Id = "5417f708-8e02-49ea-ab20-8ac3c270cbc6",
+                            ConcurrencyStamp = "54cc150c-aa43-44e5-9b29-92ea1bb83f30",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -164,8 +164,8 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855",
-                            RoleId = "65575ee1-31ab-4cfc-a11a-2925b6b5fb3b"
+                            UserId = "60b627e8-dd28-4bc2-8aae-2bddee21e4c2",
+                            RoleId = "758466db-5ffe-4b2f-9489-0e56ac673e50"
                         });
                 });
 
@@ -404,6 +404,26 @@ namespace teacher_api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Archived = false,
+                            Name = "Math"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Archived = false,
+                            Name = "Chemistry"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Archived = false,
+                            Name = "Physic"
+                        });
                 });
 
             modelBuilder.Entity("teacher_api.Domain.Entities.Organizations.Organization", b =>
@@ -468,12 +488,12 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ed99a938-be79-470d-be7c-a098166d0ccf",
+                            Id = "b082fdac-d36d-4b43-af4c-d71651e70071",
                             Role = "Admin"
                         },
                         new
                         {
-                            Id = "3e1785a4-9e16-43a3-9821-3a3f5bc0668c",
+                            Id = "5ac94f00-a03b-4234-875a-18061564e0aa",
                             Role = "User"
                         });
                 });
@@ -634,10 +654,10 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "784adc7c-6ef1-4fcd-b2ec-c8a6d5b27855",
+                            Id = "60b627e8-dd28-4bc2-8aae-2bddee21e4c2",
                             AccessFailedCount = 0,
                             BackgroundImagePath = "",
-                            ConcurrencyStamp = "0f55b8e7-54ca-4c1b-8d71-8239be53b33a",
+                            ConcurrencyStamp = "9db4cfdf-5ab6-43f7-8554-141cbe85b1e0",
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "shawnchenofficial@gmail.com",
                             EmailConfirmed = false,
@@ -647,10 +667,10 @@ namespace teacher_api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SHAWNCHENOFFICIAL@GMAIL.COM",
                             NormalizedUserName = "SHAWNCHENOFFICIAL@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELJdznT55S0mBCwAInOVfavMeLD6j5tJUdYGQN7ZoVmiktqnoGmHF3gTLPzbuLGFIQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC4+BKXmXGSWZLRdOBnRNwG2SoJJ6kCUKehDwn3PrLPWRjLFJYIt9wX56QB+YDJp+A==",
                             PhoneNumberConfirmed = false,
                             ProfileImagePath = "",
-                            SecurityStamp = "0b99b079-1c79-4859-a038-7c24c511c4dd",
+                            SecurityStamp = "6911789e-dbbe-4e06-b28e-ebe4c3eac243",
                             Title = "Mrs",
                             TwoFactorEnabled = false,
                             UserName = "shawnchenofficial@gmail.com"

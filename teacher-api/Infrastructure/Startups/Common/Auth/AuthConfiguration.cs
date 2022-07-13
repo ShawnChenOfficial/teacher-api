@@ -72,7 +72,7 @@ namespace teacher_api.Infrastructure.Startups.Common.Auth
                     }
 
 					opt.UseAspNetCore()
-					   .EnableAuthorizationEndpointPassthrough() // Add this line.
+					   .EnableAuthorizationEndpointPassthrough()
 					   .EnableTokenEndpointPassthrough()
 					   .EnableLogoutEndpointPassthrough();
 

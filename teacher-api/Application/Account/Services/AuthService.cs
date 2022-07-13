@@ -85,12 +85,6 @@ namespace teacher_api.Application.Account.Services
                 claim.SetDestinations(Destinations.AccessToken, Destinations.IdentityToken);
             }
 
-            // Set the list of scopes granted to the client application.
-            principal.SetScopes(new[]
-            {
-                        Scopes.OfflineAccess,
-                    });
-
             principal.AddIdentity(new ClaimsIdentity("userId", user.Id, ClaimValueTypes.String));
 
             var properties = new AuthenticationProperties();
