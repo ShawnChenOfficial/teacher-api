@@ -479,6 +479,13 @@ namespace teacher_api.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ApplicationUserId = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Address = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_City = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_PostCode = table.Column<int>(type: "int", nullable: true),
                     CreatedBy = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
@@ -503,16 +510,16 @@ namespace teacher_api.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "244414ea-c50b-45a1-8b8e-9b4975964f3d", "dbb10149-5a2e-4a0e-816c-97c1b67059bd", "OrganizationUser", "ORGANIZATIONUSER" },
-                    { "5417f708-8e02-49ea-ab20-8ac3c270cbc6", "54cc150c-aa43-44e5-9b29-92ea1bb83f30", "User", "USER" },
-                    { "758466db-5ffe-4b2f-9489-0e56ac673e50", "840d7239-db5b-4dc7-bcfc-50b3ce697557", "Admin", "ADMIN" },
-                    { "78a893b5-e010-4b45-8258-0d0651385ba1", "ef7254f3-5dac-4a06-9152-3a99d411c8cf", "OrganizationAdmin", "ORGANIZATIONADMIN" }
+                    { "3524df74-db67-400f-a6b9-f1c3dcd2f6a1", "66e10966-0e0c-400b-bb95-ffa8c2f1a58a", "User", "USER" },
+                    { "67844318-55a4-4d1e-89da-b7a5d7b4c447", "2a98a15b-2617-45c2-84cc-3597a2f29b10", "OrganizationUser", "ORGANIZATIONUSER" },
+                    { "d13f2a46-a557-4f7f-9f03-9ab89b69c3f7", "3420c454-6084-45d0-9151-0155ae01f203", "OrganizationAdmin", "ORGANIZATIONADMIN" },
+                    { "f59b518d-4ee4-473a-9380-802b4e757d25", "e5420431-3108-48e3-9518-f55c41d68ffa", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "BackgroundImagePath", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "OrganizationId", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImagePath", "SecurityStamp", "Title", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "60b627e8-dd28-4bc2-8aae-2bddee21e4c2", 0, "", "9db4cfdf-5ab6-43f7-8554-141cbe85b1e0", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAEC4+BKXmXGSWZLRdOBnRNwG2SoJJ6kCUKehDwn3PrLPWRjLFJYIt9wX56QB+YDJp+A==", null, false, "", "6911789e-dbbe-4e06-b28e-ebe4c3eac243", "Mrs", false, "shawnchenofficial@gmail.com" });
+                values: new object[] { "11cc3c6c-7251-4963-a2b6-eb3ea2177acc", 0, "", "3990f2f7-93a2-439f-aad6-75b56b7f40c6", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAEIGjxIoaUl+g/8lDgCnHCmJbUKuOGaj8jc+Vg8JVL2xmvSgNiAu81FNvLE4G1ofb6Q==", null, false, "", "c1f7f1c2-3896-4b3b-85b0-f4838e766532", "Mrs", false, "shawnchenofficial@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Category",
@@ -529,14 +536,14 @@ namespace teacher_api.Migrations
                 columns: new[] { "Id", "Role" },
                 values: new object[,]
                 {
-                    { "5ac94f00-a03b-4234-875a-18061564e0aa", "User" },
-                    { "b082fdac-d36d-4b43-af4c-d71651e70071", "Admin" }
+                    { "6f8dc692-c198-45cb-bde8-a45a210221c2", "Admin" },
+                    { "e1ec1507-408d-4537-a1af-a400310d3723", "User" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "758466db-5ffe-4b2f-9489-0e56ac673e50", "60b627e8-dd28-4bc2-8aae-2bddee21e4c2" });
+                values: new object[] { "f59b518d-4ee4-473a-9380-802b4e757d25", "11cc3c6c-7251-4963-a2b6-eb3ea2177acc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

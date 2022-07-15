@@ -5,24 +5,23 @@ using teacher_api.Application.Base.Interface;
 using teacher_api.Application.Posts.Models;
 using teacher_api.Domain.Entities.Posts;
 
-namespace teacher_api.Application.Posts.Queries.GetPost
+namespace teacher_api.Application.Posts.Queries.GetPosts
 {
-	public record GetPostQuery: IRequest<List<PostDto>>
+    public record GetPostsQuery : IRequest<List<PostDto>>
     {
-        [FromRoute]
         public int CategoryId { get; set; }
-	}
+    }
 
-    public class GetPostQueryHandler : IRequestHandler<GetPostQuery, List<PostDto>>
+    public class GetPostsQueryHandler : IRequestHandler<GetPostsQuery, List<PostDto>>
     {
         private readonly IRepository<Post> postRepo;
 
-        public GetPostQueryHandler(IRepository<Post> postRepo)
+        public GetPostsQueryHandler(IRepository<Post> postRepo)
         {
             this.postRepo = postRepo;
         }
 
-        public Task<List<PostDto>> Handle(GetPostQuery request, CancellationToken cancellationToken)
+        public Task<List<PostDto>> Handle(GetPostsQuery request, CancellationToken cancellationToken)
         {
             var result = postRepo
                 .Get()
@@ -31,6 +30,7 @@ namespace teacher_api.Application.Posts.Queries.GetPost
                 .Select(s => new PostDto
                 {
                     CategoryId = s.CategoryId,
+                    CategoryName = s.Category.Name,
                     StartDate = s.StartDate,
                     CreatedBy = s.CreatedBy,
                     Description = s.Description,

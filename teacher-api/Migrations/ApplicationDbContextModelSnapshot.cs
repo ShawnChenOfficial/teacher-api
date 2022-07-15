@@ -47,29 +47,29 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "758466db-5ffe-4b2f-9489-0e56ac673e50",
-                            ConcurrencyStamp = "840d7239-db5b-4dc7-bcfc-50b3ce697557",
+                            Id = "f59b518d-4ee4-473a-9380-802b4e757d25",
+                            ConcurrencyStamp = "e5420431-3108-48e3-9518-f55c41d68ffa",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "78a893b5-e010-4b45-8258-0d0651385ba1",
-                            ConcurrencyStamp = "ef7254f3-5dac-4a06-9152-3a99d411c8cf",
+                            Id = "d13f2a46-a557-4f7f-9f03-9ab89b69c3f7",
+                            ConcurrencyStamp = "3420c454-6084-45d0-9151-0155ae01f203",
                             Name = "OrganizationAdmin",
                             NormalizedName = "ORGANIZATIONADMIN"
                         },
                         new
                         {
-                            Id = "244414ea-c50b-45a1-8b8e-9b4975964f3d",
-                            ConcurrencyStamp = "dbb10149-5a2e-4a0e-816c-97c1b67059bd",
+                            Id = "67844318-55a4-4d1e-89da-b7a5d7b4c447",
+                            ConcurrencyStamp = "2a98a15b-2617-45c2-84cc-3597a2f29b10",
                             Name = "OrganizationUser",
                             NormalizedName = "ORGANIZATIONUSER"
                         },
                         new
                         {
-                            Id = "5417f708-8e02-49ea-ab20-8ac3c270cbc6",
-                            ConcurrencyStamp = "54cc150c-aa43-44e5-9b29-92ea1bb83f30",
+                            Id = "3524df74-db67-400f-a6b9-f1c3dcd2f6a1",
+                            ConcurrencyStamp = "66e10966-0e0c-400b-bb95-ffa8c2f1a58a",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -162,8 +162,8 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "60b627e8-dd28-4bc2-8aae-2bddee21e4c2",
-                            RoleId = "758466db-5ffe-4b2f-9489-0e56ac673e50"
+                            UserId = "11cc3c6c-7251-4963-a2b6-eb3ea2177acc",
+                            RoleId = "f59b518d-4ee4-473a-9380-802b4e757d25"
                         });
                 });
 
@@ -486,12 +486,12 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b082fdac-d36d-4b43-af4c-d71651e70071",
+                            Id = "6f8dc692-c198-45cb-bde8-a45a210221c2",
                             Role = "Admin"
                         },
                         new
                         {
-                            Id = "5ac94f00-a03b-4234-875a-18061564e0aa",
+                            Id = "e1ec1507-408d-4537-a1af-a400310d3723",
                             Role = "User"
                         });
                 });
@@ -652,10 +652,10 @@ namespace teacher_api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "60b627e8-dd28-4bc2-8aae-2bddee21e4c2",
+                            Id = "11cc3c6c-7251-4963-a2b6-eb3ea2177acc",
                             AccessFailedCount = 0,
                             BackgroundImagePath = "",
-                            ConcurrencyStamp = "9db4cfdf-5ab6-43f7-8554-141cbe85b1e0",
+                            ConcurrencyStamp = "3990f2f7-93a2-439f-aad6-75b56b7f40c6",
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "shawnchenofficial@gmail.com",
                             EmailConfirmed = false,
@@ -665,10 +665,10 @@ namespace teacher_api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SHAWNCHENOFFICIAL@GMAIL.COM",
                             NormalizedUserName = "SHAWNCHENOFFICIAL@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC4+BKXmXGSWZLRdOBnRNwG2SoJJ6kCUKehDwn3PrLPWRjLFJYIt9wX56QB+YDJp+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIGjxIoaUl+g/8lDgCnHCmJbUKuOGaj8jc+Vg8JVL2xmvSgNiAu81FNvLE4G1ofb6Q==",
                             PhoneNumberConfirmed = false,
                             ProfileImagePath = "",
-                            SecurityStamp = "6911789e-dbbe-4e06-b28e-ebe4c3eac243",
+                            SecurityStamp = "c1f7f1c2-3896-4b3b-85b0-f4838e766532",
                             Title = "Mrs",
                             TwoFactorEnabled = false,
                             UserName = "shawnchenofficial@gmail.com"
@@ -820,9 +820,37 @@ namespace teacher_api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.OwnsOne("teacher_api.Domain.Entities.Shared.Location", "Location", b1 =>
+                        {
+                            b1.Property<Guid>("PostId")
+                                .HasColumnType("char(36)");
+
+                            b1.Property<string>("Address")
+                                .HasColumnType("longtext");
+
+                            b1.Property<string>("City")
+                                .HasColumnType("longtext");
+
+                            b1.Property<int?>("PostCode")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Suburb")
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("PostId");
+
+                            b1.ToTable("Post");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PostId");
+                        });
+
                     b.Navigation("ApplicationUser");
 
                     b.Navigation("Category");
+
+                    b.Navigation("Location")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("teacher_api.Domain.Entities.Users.ApplicationUser", b =>

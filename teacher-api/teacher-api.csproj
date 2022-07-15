@@ -105,6 +105,10 @@
     <None Remove="Infrastructure\Middlewares\" />
     <None Remove="Infrastructure\Middlewares\Auth\" />
     <None Remove="Infrastructure\Cache\" />
+    <None Remove="Application\Posts\Commands\" />
+    <None Remove="Application\Posts\Queries\" />
+    <None Remove="Application\Posts\Controllers\" />
+    <None Remove="Application\Posts\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -156,5 +160,9 @@
     <Folder Include="Infrastructure\Middlewares\" />
     <Folder Include="Infrastructure\Middlewares\Auth\" />
     <Folder Include="Infrastructure\Cache\" />
+    <Folder Include="Application\Posts\Commands\" />
+    <Folder Include="Application\Posts\Queries\" />
+    <Folder Include="Application\Posts\Controllers\" />
+    <Folder Include="Application\Posts\Models\" />
   </ItemGroup>
 </Project>

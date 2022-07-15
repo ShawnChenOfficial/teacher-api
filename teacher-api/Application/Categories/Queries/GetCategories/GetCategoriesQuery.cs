@@ -27,7 +27,7 @@ namespace teacher_api.Application.Categories.Queries.GetCategories
                 {
                     Id = s.Id,
                     Name = s.Name
-                }).ToList();
+                }).OrderBy(o => o.Name).ToList();
 
             return Task.FromResult(data);
         }

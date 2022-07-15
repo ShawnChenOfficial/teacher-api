@@ -1,5 +1,6 @@
 ﻿using System;
 using teacher_api.Domain.Entities.Categories;
+using teacher_api.Domain.Entities.Shared;
 using teacher_api.Domain.Entities.Users;
 
 namespace teacher_api.Domain.Entities.Posts
@@ -21,6 +22,8 @@ namespace teacher_api.Domain.Entities.Posts
         public string UserId { get; set; } = default!;
 
         public ApplicationUser? ApplicationUser { get; set; }
+
+		public Location Location { get; set; }
 
         public DateTime CreatedBy { get; set; }
     }
