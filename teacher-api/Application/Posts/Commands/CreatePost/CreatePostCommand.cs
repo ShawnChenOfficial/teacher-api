@@ -48,10 +48,12 @@ namespace teacher_api.Application.Posts.Commands.CreatePost
                 StartDate = s.StartDate,
                 Location = new Location
                 {
-                     Address = s.Location.Address,
-                     Suburb = s.Location.Suburb,
-                     City = s.Location.City,
-                     PostCode = s.Location.PostCode,
+                    Number = s.Location.Number,
+                    Street = s.Location.Street,
+                    Suburb = s.Location.Suburb,
+                    City = s.Location.City,
+                    Region = s.Location.Region,
+                    PostCode = s.Location.PostCode,
                 },
             }).First();
 
