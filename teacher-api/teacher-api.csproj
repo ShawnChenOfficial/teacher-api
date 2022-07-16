@@ -74,9 +74,7 @@
     <None Remove="MediatR" />
     <None Remove="Infrastructure\Persistence\" />
     <None Remove="Infrastructure\Common\Configuration\Startups\" />
-    <None Remove="Infrastructure\Persistence\Repository\" />
     <None Remove="EFCore.BulkExtensions" />
-    <None Remove="Application\Base\Interface\" />
     <None Remove="Application\Categories\Queries\" />
     <None Remove="Application\Categories\Queries\GetCategories\" />
     <None Remove="Application\Categories\Models\" />
@@ -109,6 +107,10 @@
     <None Remove="Application\Posts\Queries\" />
     <None Remove="Application\Posts\Controllers\" />
     <None Remove="Application\Posts\Models\" />
+    <None Remove="Application\Posts\Commands\CreatePost\" />
+    <None Remove="Infrastructure\Persistence\Interfaces\" />
+    <None Remove="Infrastructure\Persistence\Services\" />
+    <None Remove="Infrastructure\Startups\Common\MemoryCache\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -133,8 +135,6 @@
     <Folder Include="Application\Base\" />
     <Folder Include="Application\Base\Controllers\" />
     <Folder Include="Infrastructure\Persistence\" />
-    <Folder Include="Infrastructure\Persistence\Repository\" />
-    <Folder Include="Application\Base\Interface\" />
     <Folder Include="Application\Categories\Queries\" />
     <Folder Include="Application\Categories\Queries\GetCategories\" />
     <Folder Include="Application\Categories\Models\" />
@@ -164,5 +164,9 @@
     <Folder Include="Application\Posts\Queries\" />
     <Folder Include="Application\Posts\Controllers\" />
     <Folder Include="Application\Posts\Models\" />
+    <Folder Include="Application\Posts\Commands\CreatePost\" />
+    <Folder Include="Infrastructure\Persistence\Interfaces\" />
+    <Folder Include="Infrastructure\Persistence\Services\" />
+    <Folder Include="Infrastructure\Startups\Common\MemoryCache\" />
   </ItemGroup>
 </Project>

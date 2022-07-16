@@ -17,11 +17,7 @@ namespace teacher_api.Application.Posts.Models
 
         public DateTime StartDate { get; set; }
 
-        public string UserId { get; set; } = default!;
-
-        public DateTime CreatedBy { get; set; }
-
-        public Location Location { get; set; }
+        public Location Location { get; set; } = new Location();
     }
 }
 

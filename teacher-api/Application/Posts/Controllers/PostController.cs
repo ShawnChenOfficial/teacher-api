@@ -1,6 +1,8 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using teacher_api.Application.Base.Controllers;
+using teacher_api.Application.Posts.Commands.CreatePost;
 using teacher_api.Application.Posts.Queries.GetPosts;
 
 namespace teacher_api.Application.Posts.Controllers
@@ -9,16 +11,20 @@ namespace teacher_api.Application.Posts.Controllers
     [Route("api/[controller]")]
     public class PostController : ApiBaseController
     {
-        /// <summary>
-        /// get posts by single cateogry
-        /// </summary>
-        /// <param name="query"></param>
-        /// <returns></returns>
         [Route("")]
         [HttpGet]
         public async Task<IActionResult> GetPosts([FromQuery] GetPostsQuery query)
         {
             return Ok(await Mediator.Send(query));
+        }
+
+
+        [Authorize]
+        [Route("")]
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm] CreatePostCommand command)
+        {
+            return Ok(await Mediator.Send(command));
         }
 
     }

@@ -4,14 +4,13 @@ using teacher_api.Infrastructure.Middlewares.Auth;
 using teacher_api.Infrastructure.Startups.Common.Auth;
 using teacher_api.Infrastructure.Startups.Common.Database;
 using teacher_api.Infrastructure.Startups.Common.MediatR;
+using teacher_api.Infrastructure.Startups.Common.MemoryCache;
 using teacher_api.Startups.Common.Origins;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddSignalR();
-
-builder.Services.AddMemoryCache();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -22,7 +21,8 @@ builder.Services.AddControllers(options => options.Filters.Add<ApiExceptionFilte
         builder.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
-builder.ConfigureOrigins()
+builder.ConfigureMemoryCache()
+       .ConfigureOrigins()
        .ConfigureDatabase()
        .ConfigureAuth()
        .ConfigureMediatR()
