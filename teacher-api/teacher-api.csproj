@@ -74,9 +74,7 @@
     <None Remove="MediatR" />
     <None Remove="Infrastructure\Persistence\" />
     <None Remove="Infrastructure\Common\Configuration\Startups\" />
-    <None Remove="Infrastructure\Persistence\Repository\" />
     <None Remove="EFCore.BulkExtensions" />
-    <None Remove="Application\Base\Interface\" />
     <None Remove="Application\Categories\Queries\" />
     <None Remove="Application\Categories\Queries\GetCategories\" />
     <None Remove="Application\Categories\Models\" />
@@ -92,7 +90,6 @@
     <None Remove="Infrastructure\Persistence\Configurations\Users\" />
     <None Remove="Infrastructure\Persistence\Extensions\" />
     <None Remove="Application\Categories\Commands\UpdateCategory\" />
-    <None Remove="Application\Categories\Commands\RemoveCategoryCommand\" />
     <None Remove="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <None Remove="Application\Base\Exceptions\" />
     <None Remove="Application\Organizations\Controllers\" />
@@ -103,6 +100,17 @@
     <None Remove="Application\Organizations\Dtos\" />
     <None Remove="Application\Base\Queries\" />
     <None Remove="Application\Account\Commands\OrganizationAccountRegister\" />
+    <None Remove="Infrastructure\Middlewares\" />
+    <None Remove="Infrastructure\Middlewares\Auth\" />
+    <None Remove="Infrastructure\Cache\" />
+    <None Remove="Application\Posts\Commands\" />
+    <None Remove="Application\Posts\Queries\" />
+    <None Remove="Application\Posts\Controllers\" />
+    <None Remove="Application\Posts\Models\" />
+    <None Remove="Application\Posts\Commands\CreatePost\" />
+    <None Remove="Infrastructure\Persistence\Interfaces\" />
+    <None Remove="Infrastructure\Persistence\Services\" />
+    <None Remove="Infrastructure\Startups\Common\MemoryCache\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -127,8 +135,6 @@
     <Folder Include="Application\Base\" />
     <Folder Include="Application\Base\Controllers\" />
     <Folder Include="Infrastructure\Persistence\" />
-    <Folder Include="Infrastructure\Persistence\Repository\" />
-    <Folder Include="Application\Base\Interface\" />
     <Folder Include="Application\Categories\Queries\" />
     <Folder Include="Application\Categories\Queries\GetCategories\" />
     <Folder Include="Application\Categories\Models\" />
@@ -141,7 +147,6 @@
     <Folder Include="Infrastructure\Persistence\Configurations\Users\" />
     <Folder Include="Infrastructure\Persistence\Extensions\" />
     <Folder Include="Application\Categories\Commands\UpdateCategory\" />
-    <Folder Include="Application\Categories\Commands\RemoveCategoryCommand\" />
     <Folder Include="Infrastructure\Persistence\Configurations\DataSeeder\" />
     <Folder Include="Application\Base\Exceptions\" />
     <Folder Include="Application\Organizations\Controllers\" />
@@ -152,5 +157,16 @@
     <Folder Include="Application\Organizations\Dtos\" />
     <Folder Include="Application\Base\Queries\" />
     <Folder Include="Application\Account\Commands\OrganizationAccountRegister\" />
+    <Folder Include="Infrastructure\Middlewares\" />
+    <Folder Include="Infrastructure\Middlewares\Auth\" />
+    <Folder Include="Infrastructure\Cache\" />
+    <Folder Include="Application\Posts\Commands\" />
+    <Folder Include="Application\Posts\Queries\" />
+    <Folder Include="Application\Posts\Controllers\" />
+    <Folder Include="Application\Posts\Models\" />
+    <Folder Include="Application\Posts\Commands\CreatePost\" />
+    <Folder Include="Infrastructure\Persistence\Interfaces\" />
+    <Folder Include="Infrastructure\Persistence\Services\" />
+    <Folder Include="Infrastructure\Startups\Common\MemoryCache\" />
   </ItemGroup>
 </Project>

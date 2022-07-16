@@ -52,7 +52,7 @@ namespace teacher_api.Application.Base.Common
         {
             var exception = context.Exception as ValidationException;
 
-            context.Result = new BadRequestObjectResult(exception.Errors);
+            context.Result = new BadRequestObjectResult(exception?.Errors);
 
             context.ExceptionHandled = true;
         }
@@ -68,7 +68,7 @@ namespace teacher_api.Application.Base.Common
         {
             var exception = context.Exception as NotFoundException;
 
-            context.Result = new NotFoundObjectResult(exception.Message);
+            context.Result = new NotFoundObjectResult(exception?.Message);
 
             context.ExceptionHandled = true;
         }
@@ -97,7 +97,7 @@ namespace teacher_api.Application.Base.Common
         {
             var exception = context.Exception as BadRequestException;
 
-            context.Result = new ObjectResult(exception.Message)
+            context.Result = new ObjectResult(exception?.Message)
             {
                 StatusCode = StatusCodes.Status400BadRequest
             };

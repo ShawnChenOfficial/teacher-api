@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OpenIddict.Server.AspNetCore;
 using teacher_api.Application.Base.Controllers;
 using teacher_api.Application.Categories.Commands.CreateCategory;
 using teacher_api.Application.Categories.Commands.RemoveCategory;
@@ -17,14 +22,14 @@ namespace teacher_api.Application.Categories.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ApiBaseController
     {
-        // GET: /<controller>/
         [Route("")]
         [HttpGet]
-        public async Task<IActionResult> Get(GetCategoriesQuery query)
+        public async Task<IActionResult> Get()
         {
-            return Ok(await Mediator.Send(query));
+            return Ok(await Mediator.Send(new GetCategoriesQuery()));
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateCategoryCommand command)
@@ -32,6 +37,7 @@ namespace teacher_api.Application.Categories.Controllers
             return Ok(await Mediator.Send(command));
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("")]
         [HttpPatch]
         public async Task<IActionResult> Update(UpdateCategoryCommand command)
@@ -39,6 +45,7 @@ namespace teacher_api.Application.Categories.Controllers
             return Ok(await Mediator.Send(command));
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("")]
         [HttpDelete]
         public async Task<IActionResult> Remove(RemoveCategoryCommand command)

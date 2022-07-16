@@ -70,6 +70,26 @@ namespace teacher_api.Infrastructure.Persistence.Configurations.DataSeeder
 
             mb.Entity<OrganizationRole>().HasData(organizationRoles);
 
+            var categories = new List<Category>
+            {
+                new Category
+                {
+                    Id = 1,
+                    Name = "Math"
+                },
+                new Category
+                {
+                    Id = 2,
+                    Name = "Chemistry"
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Physic"
+                }
+            };
+            mb.Entity<Category>().HasData(categories);
+
             return mb;
         }
     }

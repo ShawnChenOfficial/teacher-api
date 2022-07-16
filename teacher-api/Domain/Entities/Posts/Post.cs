@@ -1,12 +1,13 @@
 ﻿using System;
 using teacher_api.Domain.Entities.Categories;
+using teacher_api.Domain.Entities.Shared;
 using teacher_api.Domain.Entities.Users;
 
 namespace teacher_api.Domain.Entities.Posts
 {
-	public class Post
-	{
-		public Guid Id { get; set; } = default!;
+	public class Post: AuditableEntity
+    {
+		public Guid Id { get; set; } = Guid.NewGuid();
 
 		public string Title { get; set; } = default!;
 
@@ -18,11 +19,7 @@ namespace teacher_api.Domain.Entities.Posts
 
 		public DateTime StartDate { get; set; }
 
-        public string UserId { get; set; } = default!;
-
-        public ApplicationUser? ApplicationUser { get; set; }
-
-        public DateTime CreatedBy { get; set; }
+		public Location Location { get; set; } = new Location();
     }
 }
 

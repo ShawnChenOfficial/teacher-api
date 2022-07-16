@@ -11,6 +11,8 @@ namespace teacher_api.Infrastructure.Persistence.Configurations.Posts
         {
             builder.HasKey(h => h.Id);
 
+            builder.OwnsOne(h => h.Location);
+
             builder.HasOne(h => h.Category).WithMany(w => w.Posts);
 
             builder.HasOne(h => h.ApplicationUser).WithMany();
