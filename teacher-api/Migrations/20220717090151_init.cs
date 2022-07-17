@@ -136,11 +136,15 @@ namespace teacher_api.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProfileImagePath = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Address = table.Column<string>(type: "longtext", nullable: true)
+                    Location_Number = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Street = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_City = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Region = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_PostCode = table.Column<int>(type: "int", nullable: true),
                     Verified = table.Column<bool>(type: "tinyint(1)", nullable: false)
@@ -239,15 +243,19 @@ namespace teacher_api.Migrations
                     Gender = table.Column<int>(type: "int", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     OrganizationId = table.Column<int>(type: "int", nullable: true),
-                    BackgroundImagePath = table.Column<string>(type: "longtext", nullable: false)
+                    BackgroundImagePath = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProfileImagePath = table.Column<string>(type: "longtext", nullable: false)
+                    ProfileImagePath = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Location_Address = table.Column<string>(type: "longtext", nullable: true)
+                    Location_Number = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Street = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_City = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Region = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_PostCode = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
@@ -475,11 +483,15 @@ namespace teacher_api.Migrations
                     Description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     StartDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Location_Address = table.Column<string>(type: "longtext", nullable: true)
+                    Location_Number = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Street = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_Suburb = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_City = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Location_Region = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Location_PostCode = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -510,16 +522,16 @@ namespace teacher_api.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2203dfee-68ae-4fdd-b2ee-77b8e19fbf6d", "de4f4be6-d59e-4dd3-8775-7c464f3b5ccf", "OrganizationUser", "ORGANIZATIONUSER" },
-                    { "43a86032-1751-4fb0-a564-4351d09c69b2", "519bb32e-adf7-490a-b8a2-ad1d69e1a6ae", "Admin", "ADMIN" },
-                    { "b4b88aa4-621a-4c8f-8825-c7a1352abe43", "7e667402-bd87-434c-a567-b2fdf641517b", "OrganizationAdmin", "ORGANIZATIONADMIN" },
-                    { "b6ce783b-6996-4683-8b5c-a81d5085503c", "37b7b706-c6aa-45d6-ade4-bb69fbd0a8a1", "User", "USER" }
+                    { "311dd0e4-3da0-4a4a-abee-5639da649695", "dc3c8144-9980-4d3a-80b1-2a554ef8f102", "User", "USER" },
+                    { "44238ae9-ee37-492a-9e30-db2b4af65cbd", "449c6409-fa44-4977-857c-8f192029cee2", "OrganizationUser", "ORGANIZATIONUSER" },
+                    { "dd2a8238-95ce-472e-ab5f-7b3b8ca844cd", "f0f01606-7828-470d-bf9b-0bd897bbc219", "Admin", "ADMIN" },
+                    { "fd997cc9-0f48-470c-94f3-02ea8242a09d", "7f8a706f-c646-4363-9c04-8208fb5c838a", "OrganizationAdmin", "ORGANIZATIONADMIN" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "BackgroundImagePath", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "OrganizationId", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImagePath", "SecurityStamp", "Title", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a55eab8b-a804-413d-a541-c8a95a41129c", 0, "", "a690153e-28f0-46f6-9e48-ba71cb127b84", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAEBMECOT5B1DHc8PaXC99d4wPjX9aWJWTfj4pMvvSBGtP/gT3EX8hqk/xiwSkt+VwXQ==", null, false, "", "b0a25c35-2f03-4154-aecb-f03f55c4ac2e", "Mrs", false, "shawnchenofficial@gmail.com" });
+                values: new object[] { "7745ffaa-9f96-499c-a873-b23ba4bbe738", 0, null, "62cafd96-f174-49b2-9f5b-fffdece1fad3", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "shawnchenofficial@gmail.com", false, "Shawn", 1, "Chen", false, null, "SHAWNCHENOFFICIAL@GMAIL.COM", "SHAWNCHENOFFICIAL@GMAIL.COM", null, "AQAAAAEAACcQAAAAEAjKt9HH7OHOzihvfa0CY9qYqWF4Hls27/d9xOH+HnpTtiwmMUbV8LuYZ7i1SWTFxQ==", null, false, null, "8006e176-8958-4104-96b5-31d3e5187520", "Mrs", false, "shawnchenofficial@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Category",
@@ -536,14 +548,14 @@ namespace teacher_api.Migrations
                 columns: new[] { "Id", "Role" },
                 values: new object[,]
                 {
-                    { "32a98b6a-aaf1-4b48-a647-24864d299b7d", "Admin" },
-                    { "4de08ed2-6674-467c-a269-058b0b7b658f", "User" }
+                    { "4951069f-ec71-49e1-a1ab-e2c7503fc9b5", "User" },
+                    { "9729f711-d1e7-4f65-91be-bbe34f8534de", "Admin" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "43a86032-1751-4fb0-a564-4351d09c69b2", "a55eab8b-a804-413d-a541-c8a95a41129c" });
+                values: new object[] { "dd2a8238-95ce-472e-ab5f-7b3b8ca844cd", "7745ffaa-9f96-499c-a873-b23ba4bbe738" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

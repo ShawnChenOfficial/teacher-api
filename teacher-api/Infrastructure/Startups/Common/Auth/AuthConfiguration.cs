@@ -47,6 +47,8 @@ namespace teacher_api.Infrastructure.Startups.Common.Auth
 				})
 				.AddServer(opt =>
 				{
+					opt.SetAccessTokenLifetime(TimeSpan.FromHours(2));
+
 					opt.SetTokenEndpointUris("/api/account/token");
 
 					opt.AllowPasswordFlow().AllowRefreshTokenFlow();

@@ -1,7 +1,7 @@
 ﻿using System;
 using teacher_api.Domain.Entities.Shared;
 
-namespace teacher_api.Application.Organizations.Dtos
+namespace teacher_api.Application.Organizations.Models
 {
 	public class OrganizationDto
 	{

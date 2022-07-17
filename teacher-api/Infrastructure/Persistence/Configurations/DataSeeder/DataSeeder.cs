@@ -30,8 +30,6 @@ namespace teacher_api.Infrastructure.Persistence.Configurations.DataSeeder
                     NormalizedUserName = "SHAWNCHENOFFICIAL@GMAIL.COM",
                     Email = "shawnchenofficial@gmail.com",
                     NormalizedEmail = "SHAWNCHENOFFICIAL@GMAIL.COM",
-                    BackgroundImagePath = "",
-                    ProfileImagePath = "",
                     Title = "Mrs",
                     FirstName = "Shawn",
                     Lastname = "Chen",

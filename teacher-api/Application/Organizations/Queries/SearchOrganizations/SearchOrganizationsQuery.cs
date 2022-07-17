@@ -2,7 +2,7 @@
 using MediatR;
 using teacher_api.Application.Base.Interface;
 using teacher_api.Application.Base.Queries;
-using teacher_api.Application.Organizations.Dtos;
+using teacher_api.Application.Organizations.Models;
 using teacher_api.Domain.Entities.Organizations;
 using teacher_api.Domain.Entities.Shared;
 
@@ -39,9 +39,11 @@ namespace teacher_api.Application.Organizations.Queries.SearchOrganizations
                 ProfileImagePath = s.ProfileImagePath,
                 Location = s.Location == null ? new Location() : new Location
                 {
-                    Address = s.Location.Address,
+                    Number = s.Location.Number,
+                    Street = s.Location.Street,
                     Suburb = s.Location.Suburb,
                     City = s.Location.City,
+                    Region = s.Region,
                     PostCode = s.Location.PostCode
                 },
                 Verified = s.Verified,

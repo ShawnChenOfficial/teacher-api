@@ -21,7 +21,7 @@ namespace teacher_api.Application.Posts.Queries.GetPosts
         {
             this.postRepo = postRepo;
         }
-
+            
         public Task<List<PostDto>> Handle(GetPostsQuery request, CancellationToken cancellationToken)
         {
             var result = postRepo

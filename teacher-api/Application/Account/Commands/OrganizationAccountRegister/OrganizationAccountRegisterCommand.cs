@@ -67,7 +67,7 @@ namespace teacher_api.Application.Account.Commands.OrganizationAccountRegister
                 Phone = request.OrganizationPhone,
                 Location = new Location
                 {
-                    Address = request.OrganizationAddress,
+                    Street = request.OrganizationAddress,
                     Suburb = request.OrganizationSuburb,
                     City = request.OrganizationCity,
                     PostCode = request.OrganizationPostCode,

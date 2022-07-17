@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using AspNet.Security.OpenIdConnect.Primitives;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -34,8 +35,7 @@ namespace teacher_api.Application.Account.Services
                 claim.SetDestinations(Destinations.AccessToken, Destinations.IdentityToken);
             }
 
-            // Set the list of scopes granted to the client application.
-            principal.SetScopes(new[] { Scopes.OfflineAccess });
+            principal.SetScopes(OpenIdConnectConstants.Scopes.OfflineAccess);
 
             principal.AddIdentity(new ClaimsIdentity("userId", user.Id, ClaimValueTypes.String));
 
@@ -83,7 +83,10 @@ namespace teacher_api.Application.Account.Services
             foreach (var claim in principal.Claims)
             {
                 claim.SetDestinations(Destinations.AccessToken, Destinations.IdentityToken);
+                claim.SetDestinations(Destinations.AccessToken, Destinations.IdentityToken);
             }
+
+            principal.SetScopes(OpenIdConnectConstants.Scopes.OfflineAccess);
 
             principal.AddIdentity(new ClaimsIdentity("userId", user.Id, ClaimValueTypes.String));
 
@@ -94,6 +97,11 @@ namespace teacher_api.Application.Account.Services
             properties.SetParameter("userId", user.Id);
             properties.SetParameter("name", user.UserName);
             properties.SetParameter("roles", JsonConvert.SerializeObject(roles));
+
+            if (user.OrganizationId.HasValue)
+            {
+                properties.SetParameter("organizationId", user.OrganizationId);
+            }
 
             return SignIn(principal, properties, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
         }

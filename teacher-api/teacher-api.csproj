@@ -62,7 +62,6 @@
     <None Remove="Application\Categories\" />
     <None Remove="Application\Posts\" />
     <None Remove="Application\Organizations\" />
-    <None Remove="Application\Profiles\" />
     <None Remove="Domain\Entities\Shared\" />
     <None Remove="Domain\Entities\Posts\" />
     <None Remove="Domain\Entities\Categories\" />
@@ -97,7 +96,6 @@
     <None Remove="Application\Organizations\Queries\" />
     <None Remove="Application\Organizations\Queries\GetOrganizations\" />
     <None Remove="Application\Organizations\Queries\SearchOrganizations\" />
-    <None Remove="Application\Organizations\Dtos\" />
     <None Remove="Application\Base\Queries\" />
     <None Remove="Application\Account\Commands\OrganizationAccountRegister\" />
     <None Remove="Infrastructure\Middlewares\" />
@@ -111,6 +109,13 @@
     <None Remove="Infrastructure\Persistence\Interfaces\" />
     <None Remove="Infrastructure\Persistence\Services\" />
     <None Remove="Infrastructure\Startups\Common\MemoryCache\" />
+    <None Remove="Application\Posts\Queries\GetMyPosts\" />
+    <None Remove="Application\Profile\" />
+    <None Remove="Application\Profile\Commands\" />
+    <None Remove="Application\Profile\Queries\" />
+    <None Remove="Application\Profile\Models\" />
+    <None Remove="Application\Profile\Queries\GetProfile\" />
+    <None Remove="Application\Profile\Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -125,7 +130,6 @@
     <Folder Include="Application\Categories\" />
     <Folder Include="Application\Posts\" />
     <Folder Include="Application\Organizations\" />
-    <Folder Include="Application\Profiles\" />
     <Folder Include="Domain\Entities\Shared\" />
     <Folder Include="Domain\Entities\Posts\" />
     <Folder Include="Domain\Entities\Categories\" />
@@ -154,7 +158,6 @@
     <Folder Include="Application\Organizations\Queries\" />
     <Folder Include="Application\Organizations\Queries\GetOrganizations\" />
     <Folder Include="Application\Organizations\Queries\SearchOrganizations\" />
-    <Folder Include="Application\Organizations\Dtos\" />
     <Folder Include="Application\Base\Queries\" />
     <Folder Include="Application\Account\Commands\OrganizationAccountRegister\" />
     <Folder Include="Infrastructure\Middlewares\" />
@@ -168,5 +171,12 @@
     <Folder Include="Infrastructure\Persistence\Interfaces\" />
     <Folder Include="Infrastructure\Persistence\Services\" />
     <Folder Include="Infrastructure\Startups\Common\MemoryCache\" />
+    <Folder Include="Application\Posts\Queries\GetMyPosts\" />
+    <Folder Include="Application\Profile\" />
+    <Folder Include="Application\Profile\Commands\" />
+    <Folder Include="Application\Profile\Queries\" />
+    <Folder Include="Application\Profile\Models\" />
+    <Folder Include="Application\Profile\Queries\GetProfile\" />
+    <Folder Include="Application\Profile\Controllers\" />
   </ItemGroup>
 </Project>

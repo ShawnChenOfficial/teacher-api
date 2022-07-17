@@ -21,9 +21,9 @@ namespace teacher_api.Domain.Entities.Users
 
 		public Organization? Organization { get; set; }
 
-		public string BackgroundImagePath { get; set; } = default!;
+		public string? BackgroundImagePath { get; set; }
 
-		public string ProfileImagePath { get; set; } = default!;
+		public string? ProfileImagePath { get; set; }
 
 		public Location? Location { get; set; }
 	}
